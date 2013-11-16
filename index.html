@@ -5,6 +5,7 @@
      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 </script>
      <script>
+	 window.isscrolled = "false";
 var scro;
      var scrod;
      $(window).on('scroll', function() {
@@ -13,13 +14,14 @@ var scro;
      if(y_scroll_pos > 25) {
                 if(scro==1)
                 {
+				window.isscrolled = "true";
                 scro=0;
                 scrod=1;
+				$("#whitespace").css("background-color", "#D3D3D3");
                 $("#them").css({position: 'fixed', top: '10px', left:'15%'});
                 $("#logo").css({position: 'fixed', top: '-2px', left:'15%'});
 				$("nav").fadeOut()
                 $("#logo").fadeOut();
-				$("li").css({background:"white"});
                 setTimeout(function(){
 				$("#replacementmenu").css({height:'150px'});
                         $("#them").animate({width:'40px', height:'40px',top:'1px'});
@@ -38,6 +40,7 @@ var scro;
                 if(scrod==1)
                 {
                 scrod=0;
+				$("#whitespace").css("background-color", "white");
                 $("#them").animate({width:'75px', height:'75px'});
                 $("#them").css({position: 'absolute', top: '5px', left:'0'});
 				$("nav").fadeOut();
@@ -105,6 +108,11 @@ var scro;
 	 .menu li ul{
 	 display:none;
 	 }
+	 .isdrop
+	 {
+	  position: relative; left: 0; top: 0;
+	  width:60px;
+	 }
      </style>
 </head>
 
@@ -112,12 +120,12 @@ var scro;
      <div id="overlay"></div><script>
       $("#overlay").css("height", $(document).height());
      </script>
-
+ <div id="whitespace" style="height:40px; width:100%; position:fixed; background-color:white; top:0px;left:0px; z-index:2;"></div>
      <div id="header">
           <img src="logo.png" alt="MHSCS Studios Logo" id="logo" style="position: relative; top: -7px; left: 0;"> <img src="m.png"
           alt="MHSCS Studios Logo" id="them" style="height:75px;z-index:3; width:75px; position: absolute; top: 5px; left: 0;">
 
-          <nav>
+          <nav style="z-index:5;">
                <ul style="z-index:5; position: relative;" class="menu">
                     
                          <a href="#contact"><li>CONTACT</li></a>
@@ -132,7 +140,7 @@ var scro;
 
                          <ul>
                               <li class="isdrop">
-                                   <a href="#">Some Action 1</a>
+                                   <a href="#">Step 1</a>
                               </li>
 
                               <li class="isdrop">
@@ -168,17 +176,27 @@ var scro;
                                                                                 $("#overlay").fadeTo(0,0.4);
                                                                                 $("li").css("background-color", "#D3D3D3");
 																				$("li").css("padding", "15px");
+																				if(window.isscrolled == "true")
+																				{
 																				$("li").css("margin-top", "46px");
+																				}
+																				else
+																				{
+																				$("li").css("margin-top", "62px");
+																				}
 																				$(this).css("background-color", "white");
 																				$(".isdrop").css("background-color", "white");
-																				if($(this).find('a').attr('id')!="homeb")
-																				{
-																					$('#homeb').css("border-bottom", "none");
-																				}
 																					$(this).css("border-top", "6px solid #F0F0F0 ");
 																					$(this).css("border-right", "6px solid #F0F0F0 ");
 																					$(this).css("border-left", "6px solid #F0F0F0 ");
+																					if(window.isscrolled == "true")
+																					{
+																					$(this).css("margin-top", "40px");
+																					}
+																					else
+																					{
 																					$(this).css("margin-top", "56px");
+																					}
 																					$(this).css("padding-left", "9px");
 																					$(this).css("padding-right", "9px");
 																					$(this).find('ul').show();
@@ -188,7 +206,13 @@ var scro;
 																				{
 																					$(this).css("background-color", "#D3D3D3");
 																					$(this).css("padding", "15px");
+																					if(window.isscrolled == "true")
+																					{
+																					$(this).css("margin-top", "46px");
+																					}
+																					else{
 																					$(this).css("margin-top", "62px");
+																					}
 																				}
 																				if($(this).attr('class')=="isdrop")
 																				{
@@ -199,8 +223,15 @@ var scro;
 																			if($(this).attr('class')!="isdrop")
 																				{
                                                                                 $("#overlay").fadeTo(0,0);
-                                                                                $("li").css("background-color", "white");
+                                                                                $("li").css("background-color", "transparent");
+																				if(window.isscrolled == "true")
+																					{
 																				$("li").css("margin-top", "61px");
+																				}
+																				else
+																				{
+																				$("li").css("margin-top", "77px");
+																				}
 																				$("li").css("padding-top", "0px");
 																				$(this).css("padding-right", "15px");
 																				$(this).css("padding-left", "15px");
