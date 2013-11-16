@@ -1,141 +1,232 @@
 <!DOCTYPE html>
+
 <html>
-	<head>
-		<!-- Use the following color scheme throughout the website 
-			#fff;
-			
-		-->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>
+<head>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+     <script>
 var scro;
-var scrod;
-$(window).on('scroll', function() {
-    var y_scroll_pos = window.pageYOffset;
- var scroll_pos_test = 25;	// set to whatever you want it to be
-    if(y_scroll_pos > 25) {
-		if(scro==1)
-		{
-		scro=0;
-		scrod=1;
-		$("#them").css({position: 'fixed', top: '10px', left:'15%'});
-		$("#logo").css({position: 'fixed', top: '-2px', left:'15%'});
-		$("nav").css({position: 'fixed', top:'-77px', left:'15%+75px'});
-		$("#replacementmenu").css({height:'137px'});
-		$("#logo").fadeOut();
-		setTimeout(function(){
-			$("#them").animate({width:'40px', height:'40px'});
-			$("#them").animate({top:'1%'});
-		}, 400);
-		}
+     var scrod;
+     $(window).on('scroll', function() {
+     var y_scroll_pos = window.pageYOffset;
+     var scroll_pos_test = 25;        // set to whatever you want it to be
+     if(y_scroll_pos > 25) {
+                if(scro==1)
+                {
+                scro=0;
+                scrod=1;
+                $("#them").css({position: 'fixed', top: '10px', left:'15%'});
+                $("#logo").css({position: 'fixed', top: '-2px', left:'15%'});
+				$("nav").fadeOut()
+                $("#logo").fadeOut();
+				$("li").css({background:"white"});
+                setTimeout(function(){
+				$("#replacementmenu").css({height:'150px'});
+                        $("#them").animate({width:'40px', height:'40px',top:'1px'});
+						$("nav").animate({top:'-83px'});
+                }, 400);
+				setTimeout(function(){
+				$("nav").fadeIn()
+				$("nav").css("float", "left");
+				$("li").css("margin-top", "77px");
+                $("nav").css({position: 'fixed', width:"620px"});
+				}, 500);
+                }
         }
         else
         {
-		if(scrod==1)
-		{
-		scrod=0;
-		$("#them").animate({width:'75px', height:'75px'});
-		$("#them").css({position: 'absolute', top: '5px', left:'0'});
-		$("#replacementmenu").css({height:'0'});
-		$("nav").css({position: 'static'});
-		setTimeout(function(){
-			$("#logo").fadeIn();
-			$("#logo").css({position: 'relative', top: '-7px', left:'0'});
-    // Other code to show whatever you want goes here, ie. $('some selector').show();
-		}, 400);
-		}
-		scro=1;
-    }
-});
-</script>
-		<title>MHS PC Studios</title>
-		<style>
-			#logo
-			{
-			width:270px;
-			height:121px;
-			float:left;
-			z-index:2;
-			}
-			ul
-			{
-			list-style-type:none;
-			overflow:hidden;
-			margin-bottom:35px;
-			}
-li
-{
-float:right;
-margin-top:77px;
-padding-left:25px;
-padding-right:25px;
-}
-a
-{
-display:block;
-text-decoration:none;
-color:#000000;
-font-family:"Arial",Arial,Sans-Serif;
-}
-a:hover
-{
-padding-left:25px;
-padding-right:25px;
-border-right:1px solid #A8A8A8; 
-border-bottom:thick solid black;
-}
-body
-{
-margin-top:35px;
-margin-left:0;
-margin-right:0;
-Padding:0;
-}
-#header
-{
-position: relative; left: 0; top: 0;
-margin-right:10%;
-margin-left:15%;
-}
-		</style>
-	</head>
-	<body>
+                if(scrod==1)
+                {
+                scrod=0;
+                $("#them").animate({width:'75px', height:'75px'});
+                $("#them").css({position: 'absolute', top: '5px', left:'0'});
+				$("nav").fadeOut();
+                setTimeout(function(){
+                        $("#logo").fadeIn();
+                        $("#logo").css({position: 'relative', top: '-7px', left:'0'});
+                }, 400);
+				setTimeout(function(){
+				$("nav").fadeIn();
+				$("nav").css({position: 'static'});
+				$("nav").css("float", "right");
+				$("li").css("margin-top", "61px");
+				$("#replacementmenu").css({height:'0'});
+				}, 500);
+                }
+                scro=1;
+     }
+     });
+     </script>
 
-		<div id="header" >
-			<img src="logo.png" alt="MHSCS Studios Logo" id="logo" style="position: relative; top: -7px; left: 0;"></img>
-			<img src="m.png" alt="MHSCS Studios Logo" id="them" style="height:75px;z-index:3; width:75px; position: absolute; top: 5px; left: 0;"></img>
-			<nav>
-				<ul>
-					<li><a href="#contact">CONTACT</a></li>
-					<li><a href="#about">ABOUT</a></li>
-					<li><a href="#process">PROCESS</a></li>
-					<li><a href="#work">WORK</a></li>
-					<li><a href="#services">SERVICES</a></li>
-					<li><a href="# active" style="border-bottom:thick solid #000000;">HOME</a></li>
-				</ul>
-			</nav>
-<div id="replacementmenu"></div>
-			</div>
-			<!-- And the rest of the content will follow below: -->
-			
-			<a name="services"></a>
-			<div class="services">
-				
-			</div>
-			
-			<a name="about"></a>
-			<div class="about">
-				
-			</div>
-			
-			<a name="contact"></a>
-			<div class="contact">
-				
-				
-			</div>
-			<img src="cover.png" alt="MHSCS Studios Logo" style="height:400px; width:1598px;"></img>
-			<img src="https://lh3.googleusercontent.com/-O-IipkPmJdw/UoL6Z3shWdI/AAAAAAAABr0/UfN_y0CGmxo/w958-h414-no/water.png" alt="MHSCS Studios Logo" 
+     <title>MHS PC Studios</title>
+     <style>
+              #logo
+                        {
+                        width:270px;
+                        height:121px;
+                        float:left;
+                        z-index:2;
+                        }
+                        ul
+                        {
+                        list-style-type:none;
+                        overflow:hidden;
+                        margin-bottom:35px;
+                        }
+     li
+     {
+     float:right;
+     margin-top:77px;
+     padding-right:15px;
+	 padding-left:15px;
+	 padding-bottom:15px;
+     }
+     a
+     {
+     display:block;
+     text-decoration:none;
+     color:#000000;
+     font-family:"Arial",Arial,Sans-Serif;
+     }
+     body
+     {
+     margin-top:35px;
+     margin-left:0;
+     margin-right:0;
+     Padding:0;
+     }
+     #header
+     {
+     position: relative; left: 0; top: 0;
+     margin-right:10%;
+     margin-left:15%;
+     }
+     #overlay{ position:absolute; top:0; left:0; width:100%; z-index:3; background-color:black; display:none; text-align:left; }
+	 .menu li ul{
+	 display:none;
+	 }
+     </style>
+</head>
 
-style="height:1000px; width:500px;"></img>
+<body>
+     <div id="overlay"></div><script>
+      $("#overlay").css("height", $(document).height());
+     </script>
 
-	</body>
+     <div id="header">
+          <img src="logo.png" alt="MHSCS Studios Logo" id="logo" style="position: relative; top: -7px; left: 0;"> <img src="m.png"
+          alt="MHSCS Studios Logo" id="them" style="height:75px;z-index:3; width:75px; position: absolute; top: 5px; left: 0;">
+
+          <nav>
+               <ul style="z-index:5; position: relative;" class="menu">
+                    
+                         <a href="#contact"><li>CONTACT</li></a>
+                    
+
+                    
+                         <a href="#about"><li>ABOUT</li></a>
+                    
+
+                    
+                         <li class="hasdrop" style="width:77.5px;"><a href="#process" id="processb">PROCESS</a>
+
+                         <ul>
+                              <li class="isdrop">
+                                   <a href="#">Some Action 1</a>
+                              </li>
+
+                              <li class="isdrop">
+                                   <a href="#">Some Action 2</a>
+                              </li>
+
+                              <li class="isdrop">
+                                   <a href="#">Some Action 3</a>
+                              </li>
+
+                              <li class="isdrop">
+                                   <a href="#">Some Action 4</a>
+                              </li>
+                         </ul>
+                    </li>
+
+                    
+                         <a href="#work"><li>WORK</li></a>
+                    
+
+                    
+                         <a href="#services"><li>SERVICES</li></a>
+                    
+
+                    
+                         <a href="" id="homeb" ><li>HOME</li></a>
+                   
+               </ul>
+			   <script>
+                                          $( "li" ).hover( function () {
+																				if($(this).attr('class')=="hasdrop")
+																				{
+                                                                                $("#overlay").fadeTo(0,0.4);
+                                                                                $("li").css("background-color", "#D3D3D3");
+																				$("li").css("padding", "15px");
+																				$("li").css("margin-top", "46px");
+																				$(this).css("background-color", "white");
+																				$(".isdrop").css("background-color", "white");
+																				if($(this).find('a').attr('id')!="homeb")
+																				{
+																					$('#homeb').css("border-bottom", "none");
+																				}
+																					$(this).css("border-top", "6px solid #F0F0F0 ");
+																					$(this).css("border-right", "6px solid #F0F0F0 ");
+																					$(this).css("border-left", "6px solid #F0F0F0 ");
+																					$(this).css("margin-top", "56px");
+																					$(this).css("padding-left", "9px");
+																					$(this).css("padding-right", "9px");
+																					$(this).find('ul').show();
+																					$(this).css("text-align", "middle");
+																				}
+																				else
+																				{
+																					$(this).css("background-color", "#D3D3D3");
+																					$(this).css("padding", "15px");
+																					$(this).css("margin-top", "62px");
+																				}
+																				if($(this).attr('class')=="isdrop")
+																				{
+																					$(this).css("background-color", "#FFFFFF");
+																					$(this).css("text-decoration","underline");
+																				}
+                                                                        }, function() {
+																			if($(this).attr('class')!="isdrop")
+																				{
+                                                                                $("#overlay").fadeTo(0,0);
+                                                                                $("li").css("background-color", "white");
+																				$("li").css("margin-top", "61px");
+																				$("li").css("padding-top", "0px");
+																				$(this).css("padding-right", "15px");
+																				$(this).css("padding-left", "15px");
+																				$(this).css("border", "none");
+																				if($(this).attr('class')=="hasdrop")
+																				{
+																				$(this).find('ul').toggle(0);
+																				}
+																				}
+																				$(this).css("text-decoration","none");
+                                                                        });
+                                                                        
+																		
+               </script>
+          </nav>
+
+          <div id="replacementmenu"></div>
+     </div><!-- And the rest of the content will follow below: -->
+     <a name="services" id="services"></a>
+
+     <div class="services"></div><a name="about" id="about"></a>
+
+     <div class="about"></div><a name="contact" id="contact"></a>
+
+     <div class="contact"></div><img src="cover.png" alt="MHSCS Studios Logo" style="height:400px; width:100%; position: absolute; left:0px;top:160px;"> <img src=
+     "https://lh3.googleusercontent.com/-O-IipkPmJdw/UoL6Z3shWdI/AAAAAAAABr0/UfN_y0CGmxo/w958-h414-no/water.png" alt=
+     "MHSCS Studios Logo" style="height:2000px; width:500px;">
+</body>
 </html>
